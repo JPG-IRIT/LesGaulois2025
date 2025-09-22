@@ -1,5 +1,8 @@
 package test_fonctionnel;
 
+import java.nio.file.spi.FileSystemProvider;
+
+import Personnages.Druide;
 import Personnages.Gaulois;
 import Personnages.Romain;
 
@@ -24,6 +27,17 @@ public class TestGaulois {
 			asterix.frapper(minus);
 		}
 		
+		System.out.println();
+		
+		Romain brutus = new Romain("Brutus", 14);
+		Druide panoramix = new Druide("Panoramix", 14);
+		panoramix.fabriquerPotion(4, 3);
+		panoramix.booster(obelix);
+		panoramix.booster(asterix);
+		
+		for (int i = 1; i <= 3; i++) {
+			asterix.frapper(brutus);
+		}
 	}
 	
 }
