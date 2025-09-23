@@ -1,4 +1,4 @@
-package objects;
+package personnages.matos;
 
 public class Chaudron {
 

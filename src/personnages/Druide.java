@@ -1,6 +1,6 @@
-package Personnages;
+package personnages;
 
-import objects.Chaudron;
+import personnages.matos.Chaudron;
 
 public class Druide {
 

@@ -2,9 +2,9 @@ package test_fonctionnel;
 
 import java.nio.file.spi.FileSystemProvider;
 
-import Personnages.Druide;
-import Personnages.Gaulois;
-import Personnages.Romain;
+import personnages.Druide;
+import personnages.Gaulois;
+import personnages.Romain;
 
 public class TestGaulois {
 

@@ -1,4 +1,4 @@
-package Personnages;
+package personnages;
 
 public class Gaulois {
 
