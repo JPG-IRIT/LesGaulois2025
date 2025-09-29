@@ -2,8 +2,8 @@ package personnages.matos;
 
 public class Chaudron {
 
-	int quantitePotion;
-	int forcePotion;
+	private int quantitePotion;
+	private int forcePotion;
 	
 	public void remplirChaudron(int quantite, int forcePotion) {
 		this.quantitePotion = quantite;
