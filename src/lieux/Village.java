@@ -15,6 +15,10 @@ public class Village {
 		this.chef = chef;
 		villageois = new Gaulois[NB_VILAGEOIS_MAX];
 	}
+
+	public String getNom() {
+		return nom;
+	}
 	
 	public void ajouterVillageois(Gaulois g) {
 		villageois[nbVillageois] = g;
@@ -41,7 +45,9 @@ public class Village {
 		}
 		System.out.println(msg);
 	}
-	
+
+
+	// tests du village
 	public static void main(String[] args) {
 		Gaulois abraracourcix = new Gaulois("Abraracourcix", 6);
 		Village village = new Village("Village des Irréductibles", 
@@ -62,6 +68,32 @@ public class Village {
 		System.out.println("\n");
 		
 		village.afficherVillageois();
+		
+		System.out.println("\n");
+		
+		Gaulois obelix = new Gaulois("Obélix", 16);
+		village.ajouterVillageois(obelix);
+		obelix.setVillage(village);
+		obelix.setMessage(" J'habite le village : ");
+		
+		asterix.setVillage(village);
+		asterix.setMessage(" J'habite le village : ");
+		
+		abraracourcix.setVillage(village);
+		abraracourcix.setMessage(" Je suis le chef du village : ");
+		
+		Gaulois doublePolemix = new Gaulois("DoublePolémix", 4);
+		doublePolemix.setMessage(" Je voyage de village en village");
+		
+		village.afficherVillageois();
+	
+		System.out.println("\n");
+		
+		abraracourcix.sePresenter();
+		asterix.sePresenter();
+		doublePolemix.sePresenter();
 	}
+	
+	
 	
 }

@@ -1,11 +1,17 @@
 package personnages;
 
+import lieux.Village;
+
 public class Gaulois {
 
 	private String nom;
 	private int force;
 
 	private int effetPotion = 1;
+	
+	// TP2
+	private Village village;
+	private String msg;
 	
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
@@ -14,6 +20,25 @@ public class Gaulois {
 
 	public String getNom() {
 		return nom;
+	}
+	
+	public void setVillage(Village v) {
+		this.village = v;
+	}
+	
+	public void setMessage(String msg) {
+		this.msg = msg;
+	}
+	
+	public void sePresenter() {
+		String s = "";
+		s += "Bonjour, je m'apelle " + nom
+				+ "." + msg;
+		if (! (village == null)) {
+			s += village.getNom(); 
+		}
+				
+		parler(s);
 	}
 
 	public void parler(String texte) {
