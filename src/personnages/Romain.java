@@ -8,6 +8,9 @@ public class Romain {
 	public Romain(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
+		
+		// TP2
+		assert isInvariantVerified(force);
 	}
 
 	public String getNom() {
@@ -23,6 +26,11 @@ public class Romain {
 	}
 
 	public void recevoirCoup(int forceCoup) {
+		
+		// TP2
+		assert isInvariantVerified(forceCoup);
+		int saveForce = this.force;
+		
 		this.force -= forceCoup;
 		
 		if (this.force < 1) {
@@ -31,6 +39,24 @@ public class Romain {
 		} else {
 			parler("Aïe");
 		}
+		
+		// TP2
+		assert isInvariantVerified(this.force);
+		assert (this.force < saveForce);
+	}
+	
+	
+	private Boolean isInvariantVerified(int force) {
+		return (force > 0);
+	}
+	
+	// tests de Romain
+	public static void main(String[] args) {
+		System.out.println("TESTS ROMAIN \n");
+		
+//		Romain minusRomain = new Romain("Minus", -6);
+		Romain minusRomain = new Romain("Minus", 6);
+				
 	}
 	
 }
