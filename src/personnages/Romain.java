@@ -26,6 +26,10 @@ public class Romain {
 		return nom;
 	}
 
+	public int getForce() {
+		return force;
+	}
+
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "\"" + texte + "\"");
 	}
@@ -94,7 +98,8 @@ public class Romain {
 			texte += "\nMais heureusement, grace à mon équipement sa force est diminué de ";
 			for (int i = 0; i < nbEquipements;) {
 				if ((equipements[i] != null &&
-						equipements[i].equals(Equipement.BOUCLIER)) == true) {
+//						equipements[i].equals(Equipement.BOUCLIER)) == true) {
+						equipements[i].equals(Equipement.BOUCLIER))) {
 					resistanceEquipement += 8;
 				} else {
 					System.out.println("Equipement casque");
@@ -106,7 +111,13 @@ public class Romain {
 			texte += resistanceEquipement + "!";
 		}
 		parler(texte);
-		forceCoup -= resistanceEquipement;
+//		forceCoup -= resistanceEquipement; // BUG
+
+//      if (forceCoup < 0) 
+//      forceCoup = 0;
+		forceCoup = (forceCoup < 0) ? 0 : forceCoup;
+		// ERREUR initiale : sinon bug car soustraciton de nombre négatif
+
 		return forceCoup;
 	}
 
@@ -115,7 +126,7 @@ public class Romain {
 		Equipement[] equipementEjecte = new Equipement[nbEquipements];
 //		System.out.println("L'équipement de " + nom.toString() 
 //						+ " s'envole sous la force du coup.");
-		System.out.println("L'équipement de " + nom 
+		System.out.println("L'équipement de " + nom
 				+ " s'envole sous la force du coup.");
 		// TODO
 		int nbEquipementEjecte = 0;
