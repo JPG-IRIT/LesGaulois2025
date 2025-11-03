@@ -1,7 +1,7 @@
 package histoires;
 
 import personnages.Druide;
-import objets.Equipement;
+import personnages.matos.Equipement;
 import personnages.Gaulois;
 import personnages.Romain;
 //import villagegaulois.Musee;
@@ -9,9 +9,13 @@ import personnages.Romain;
 public class ScenarioOld {
 
 	public static void main(String[] args) {
-		Druide druide = new Druide("Panoramix", 5, 10);
+//		Druide druide = new Druide("Panoramix", 5, 10);
+		Druide druide = new Druide("Panoramix", 5);
+		
 		druide.parler("Je vais aller préparer une petite potion...");
-		druide.preparerPotion();
+//		druide.preparerPotion();
+		druide.fabriquerPotion(5, 3);
+		
 		Gaulois obelix = new Gaulois("Obélix", 25);
 		Gaulois asterix = new Gaulois("Astérix", 8);
 		druide.booster(obelix);
