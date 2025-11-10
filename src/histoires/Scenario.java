@@ -12,7 +12,7 @@ public class Scenario {
 	public static void main(String[] args) {
 		Druide druide = new Druide("Panoramix", 5);
 		druide.parler("Je vais aller préparer une petite potion...");
-		druide.fabriquerPotion(5, 3);
+		druide.fabriquerPotion(5, 2);
 		Gaulois obelix = new Gaulois("Obélix", 25);
 		Gaulois asterix = new Gaulois("Astérix", 8);
 		druide.booster(obelix);
@@ -26,12 +26,18 @@ public class Scenario {
 		milexcus.sEquiper(Equipement.CASQUE);
 		minus.parler("UN GAU... UN GAUGAU...");
 		do {
+			System.out.println("\nFRAPPE");
 			asterix.frapper(minus);
 		} while (minus.getForce() > 0);
+		System.out.println("\nAUTRE GAULOIS");
+		
 		milexcus.parler("UN GAU... UN GAUGAU...");
 		do {
+			System.out.println("\nFRAPPE");
 			asterix.frapper(milexcus);
 		} while (milexcus.getForce() > 0);
+		
+		System.out.println("\nEND\n");
 		
 //		Partie a decommenter
 		

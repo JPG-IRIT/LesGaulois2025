@@ -111,7 +111,7 @@ public class Romain {
 			texte += resistanceEquipement + "!";
 		}
 		parler(texte);
-//		forceCoup -= resistanceEquipement; // BUG
+		forceCoup -= resistanceEquipement;
 
 //      if (forceCoup < 0) 
 //      forceCoup = 0;
